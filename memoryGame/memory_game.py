@@ -137,7 +137,6 @@ def play():
 def runGame():
     while True :
         keyboard = play()
-        print(keyboard)
         if keyboard == "Menu":
             return True
         elif keyboard == "Quitter":

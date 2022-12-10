@@ -11,7 +11,7 @@ import time
 import utils as animation
 
 class BiscuitGameClass:
-    def __init__(self, pathFood, timeMax = 60):
+    def __init__(self, pathFood, timeMax = 2):
         self.points = []  # all points of the decoupe of the biscuit
         self.imgBiscuit = cv2.imread("biscuit/assets/"+pathFood, cv2.IMREAD_UNCHANGED)
         self.imgMask = cv2.imread("biscuit/assets/masquer_biscuit1.jpg", cv2.IMREAD_UNCHANGED)

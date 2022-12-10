@@ -115,5 +115,28 @@ def afficher_intro():
             t=418
         if key == ord('q'):
             return "Quitter"
-        t+=1
+        t+=2
+    return "Menu"
+
+
+def afficher_intro02():
+    # Ouvrir la vidéo en utilisant la fonction cv2.VideoCapture()
+    cap = cv2.VideoCapture('animation/intro.mp4')
+
+    # Boucle tant que la vidéo est ouverte
+    while cap.isOpened():
+        # Lire le frame actuel en utilisant la fonction cap.read()
+        ret, frame = cap.read()
+
+        # Si le frame est retourné sans erreur, affiche à l'aide de la fonction cv2.imshow()
+        if ret:
+            cv2.imshow("jeu", frame)
+        key = cv2.waitKey(1)
+        if key == ord(' '):
+            t=418
+        if key == ord('q'):
+            return "Quitter"
+
+    # Librerer les ressources
+    cap.release()
     return "Menu"
