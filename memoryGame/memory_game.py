@@ -16,7 +16,7 @@ def update_values(tab_val, val, lengh =3):
 
 def isolerImage(hsv, pixel, method="BOUGER"):
     
-    # Rectangular kernal for eroding and dilating the mask for primary noise removal 
+    # Kernal rectangulaire pour l'érosion et la dilatation du masque pour la suppression de bruit 
     kernel = np.ones((7,7),np.uint8)
     # tolerance de couleur differente de la ou on a clique
     tolerance = np.array([15,50,50])  
