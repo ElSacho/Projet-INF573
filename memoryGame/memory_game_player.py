@@ -30,7 +30,7 @@ class Player:
         
     def player_play(self, answer):
         if int((time.time()-self.time )//1) > self.seuil_time*(self.score+1):
-            print('Time damage')
+          #  print('Time damage')
             return False
         el = answer[0]
         for other_el in answer:
@@ -42,7 +42,7 @@ class Player:
         #Si on est bien repasse au milieu
         if self.passed_middle :
             if el == self.tab[self.nombreDevine]:
-                print('Good')
+               #t('Good')
                 if self.nombreDevine == self.score:
                     self.score += 1
                     self.update()
@@ -51,10 +51,10 @@ class Player:
                 self.nombreDevine +=1
                 self.passed_middle = False 
                 return True
-            print(self.tab[self.nombreDevine])
-            print(answer)
+          #  print(self.tab[self.nombreDevine])
+         #  print(answer)
             return False
-        print('wtf')
+       # print('wtf')
         return True
     
     def update(self):

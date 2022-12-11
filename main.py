@@ -1,5 +1,6 @@
 from biscuit.biscuit import runGame as biscuit
 from memoryGame.memory_game import runGame as memory
+from segmentation.coloriage import runGame as coloriage
 import utils as animation
 import cv2
 import pygame
@@ -35,25 +36,31 @@ def get_mouse_pos(event,x,y,flags,param):
     
 def get_game():
     global mousePos
+    mousePos = (-1,-1)
     menu = cv2.imread("animation/intro/introduction539.png")
     cv2.imshow("jeu", menu)
     while True:
         cv2.setMouseCallback('jeu',get_mouse_pos)
         key = cv2.waitKey(1)
         if mousePos[0] != -1:
-            if mousePos[0] < 600:
-                if mousePos[1] < 640:
+            if mousePos[1] < 600:
+                if mousePos[0] < 640:
+                    print(1)
                     return 1
-                elif mousePos[1] < 1280:
+                elif mousePos[0] < 1280:
+                    print(2)
                     return 2
-                elif mousePos[1] < 1920:
+                elif mousePos[0] < 1920:
+                    print(3)
                     return 3
             elif mousePos[1]<1080:
-                if mousePos[1] < 640:
+                if mousePos[0] < 640:
+                    print(4)
                     return 4
-                elif mousePos[1] < 1280:
+                elif mousePos[0] < 1280:
+                    print(5)
                     return 5
-                elif mousePos[1] < 1920:
+                elif mousePos[0] < 1920:
                     return -1
         if key == ord('1') or key == ord('2') or key == ord('3') or key == ord('4') or key == ord('5'):
             return int(key)
@@ -61,8 +68,10 @@ def get_game():
             return -1
 
 def lancer_le_jeu(n):
-    if n == 1:
+    if n == 2:
         action = biscuit()
+    elif n== 4:
+        action = coloriage()
     else :
         action = memory()
     return action

@@ -102,7 +102,7 @@ def play():
             # On regarde si on a du texte a ecrire et si oui, on l'ecrit
             text_to_write = game.value_to_draw_sequence()
             if text_to_write != 'NaN':
-                print(text_to_write)
+               # print(text_to_write)
                 
                 cv2.putText(volant,text_to_write,
                         (10,500),
@@ -114,7 +114,7 @@ def play():
             else:
                 state = game.player_play(tab_val)
                 if state == False:
-                    print('Game Over')
+                   # print('Game Over')
                     val = animation.afficher_game_over_2D(volant)
                     return val
                 
@@ -130,7 +130,7 @@ def play():
             return "Quitter"
         if cv2.waitKey(1) == ord('m'):
             return 'Menu'
-           
+        
     webcam.release()
     cv2.destroyAllWindows()
 
