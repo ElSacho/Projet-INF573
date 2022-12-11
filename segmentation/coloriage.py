@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from randomWalker import random_walk
+from segmentation.randomWalker import random_walk
 
 click_pos = (-1,-1)
 
@@ -105,4 +105,4 @@ def runGame():
         elif keyboard == "Restart":
             keyboard = play()
     
-runGame()
+# runGame()
