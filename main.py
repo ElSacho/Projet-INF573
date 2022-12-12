@@ -1,6 +1,7 @@
 from biscuit.biscuit import runGame as biscuit
 from memoryGame.memory_game import runGame as memory
 from segmentation.coloriage import runGame as coloriage
+from soleil.soleil  import runGame as soleil
 import utils as animation
 import cv2
 import pygame
@@ -68,7 +69,9 @@ def get_game():
             return -1
 
 def lancer_le_jeu(n):
-    if n == 2:
+    if n == 1:
+        action = soleil()
+    elif n == 2:
         action = biscuit()
     elif n== 4:
         action = coloriage()

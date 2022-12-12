@@ -141,7 +141,5 @@ def runGame():
             return True
         elif keyboard == "Quitter":
             return False
-        elif keyboard == "Restart":
-            keyboard = play()
 
 # runGame()

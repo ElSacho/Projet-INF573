@@ -186,6 +186,9 @@ def play():
                 timingVideoGameOver = 0
             elif timingVideoGameOver<46:
                 if timingVideoGameOver<10:
+                    if timingVideoGameOver==6:
+                        music3 = pygame.mixer.Sound('biscuit/assets/blood.mp3')
+                        music3.play()
                     imgDead = cv2.imread('biscuit/assets/gameOver/gunShot0'+str(timingVideoGameOver)+'.png', cv2.IMREAD_UNCHANGED)
                 else :
                     imgDead = cv2.imread('biscuit/assets/gameOver/gunShot'+str(timingVideoGameOver)+'.png', cv2.IMREAD_UNCHANGED)
@@ -217,7 +220,5 @@ def runGame():
             return True
         elif keyboard == "Quitter":
             return False
-        elif keyboard == "Restart":
-            keyboard = play()
         
 # runGame()
