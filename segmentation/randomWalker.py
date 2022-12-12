@@ -175,7 +175,7 @@ def random_walk(img, matrice_label, nbr_points_labelises ,nbrLabels ,beta=10):
     L = get_matrice_L(img/255,beta)
     
     # On permute cette matrice pour placer les vecteurs labelises devant
-    vector_labelise = matrix_to_vector(matrice_label) 
+    vector_labelise = matrix_to_vector(matrice_label)
     perm, vectorLabelise_ordonne = get_permutation(vector_labelise, nbr_points_labelises)
     L = permuteL(L,perm)
 

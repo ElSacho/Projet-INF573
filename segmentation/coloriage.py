@@ -12,7 +12,7 @@ def get_mouse_pos(event,x,y,flags,param):
         
 def get_label(img, nbrLabel=3, nbrClicks=5):
     global click_pos
-    click = 1
+    click = 0
     labels = np.zeros((img.shape[0], img.shape[1]))
     label = 1
     tab_click = []
@@ -22,21 +22,26 @@ def get_label(img, nbrLabel=3, nbrClicks=5):
         cv2.setMouseCallback('jeu',get_mouse_pos)
         key = cv2.waitKey(1)
         if click_pos[0] != -1:
-            labels[click_pos]=label
             tab_click.append(click_pos)
-            tab_colors.append(img[click_pos])
-            if label ==1:
-                img[click_pos]=[0,0,255]
-            elif label ==2:
-                img[click_pos]=[255,0,0]
-            elif label ==3:
-                img[click_pos]=[0,255,0]
-            click_pos = (-1,-1)
-            click +=1
-            if click>nbrClicks:
-                return labels
-            if click == nbrClicks and label ==1:
+            tab_colors.append(img[click_pos].copy())
+            click+=1
+            if nbrClicks - click +1 ==  nbrLabel-label:
                 label +=1
+                print(label)
+            if click == nbrClicks:
+                print(click)
+                print(label)
+            labels[click_pos]=label
+            if label == 1:
+                img[click_pos]=[0,0,255]
+            elif label == 2:
+                img[click_pos]=[255,0,0]
+            elif label == 3:
+                img[click_pos]=[0,255,0]
+                cv2.imshow('jeu',img)
+            click_pos = (-1,-1)
+            if click == nbrClicks: 
+                return labels
         if key == ord(" "):
             if label<nbrLabel:
                 label +=1
@@ -62,8 +67,13 @@ def adapter(imgLabel,convert, nbrLabels):
     shape = imgLabel.shape
     for i in range(shape[0]):
         for j in range(shape[1]):
-            val = int((int(imgLabel[i][j])*255/int(nbrLabels)))
-            convert[i][j]=[val,val,val]
+            if imgLabel[i][j] == 1:
+                val=[0,0,255]
+            elif imgLabel[i][j] == 2:
+                val=[255,0,0]
+            elif imgLabel[i][j] == 3:
+                val=[0,255,0]
+            convert[i][j]=val
     # on affiche l'image finale
     return convert
         
