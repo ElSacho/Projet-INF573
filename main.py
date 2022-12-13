@@ -64,9 +64,17 @@ def get_game():
                     return 5
                 elif mousePos[0] < 1920:
                     return -1
-        if key == ord('1') or key == ord('2') or key == ord('3') or key == ord('4') or key == ord('5'):
-            return int(key)
-        if key == ord('q') or key == ord('6'):
+        if key == ord('&') :
+            return 1
+        if key == ord('é') :
+            return 2
+        if key == ord('"') :
+            return 3
+        if key == ord("'") :
+            return 4 
+        if key == ord('('):
+            return 5
+        if key == ord('q') or key == ord('§'):
             return -1
 
 def lancer_le_jeu(n):
