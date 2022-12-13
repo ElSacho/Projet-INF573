@@ -19,3 +19,13 @@ The project we are presenting is a video game platform. On our game "SquidinfGam
 - Press "r" to restart the game you are playing
 
 Enjoy our game ! 
+
+3. **To test the random walker**
+
+We suggest that you use the file "rw/random_walk.py" instead of the game as you will have more liberty.
+
+- You can choose the picture you want in the last line of the code.
+- Then, you need to specify the number of labels you want (no more than 3 because of the colors difference)
+- You can labelise the data clicking on the image. 
+- To go from one label to another, you need to press "space". Sometime it doesn't work, so look at the terminal that specify if it could labelise an another data
+- Press space once you labelised all your data
