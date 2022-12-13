@@ -37,7 +37,7 @@ class Launch:
         # musicAlreadyshot = True if the gun musicshot has already fired
         self.musicAlreadyShot = False
         self.musicShot = pygame.mixer.Sound('biscuit/assets/blood.mp3')
-
+        
     def end_game(self):
         print("Time Gave Over: ", self.timingVideoGameOver)
         if self.timingVideoGameOver<46:
@@ -58,6 +58,7 @@ class Launch:
         elif self.timingVideoGameOver<100:
             val = animation.afficher_game_over(self.image)
             return val
+
 
     def begin_game(self, mask_new, mask_old, thresh):
         if(self.already_dead == False):
@@ -148,7 +149,6 @@ def play():
                 if action == "Continue":
                     pass
                 else:
-                    print(action)
                     return action
                 mask_old = mask_new
             
