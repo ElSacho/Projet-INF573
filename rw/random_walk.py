@@ -375,7 +375,4 @@ def main(image, beta):
         if key == ord('q'):
             return
     
-
- 
-main("segmentation/assets/test03.jpg",10)
-
+main("segmentation/assets/test04.jpg",10)

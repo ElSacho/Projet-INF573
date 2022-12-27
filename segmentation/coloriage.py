@@ -81,7 +81,7 @@ def play():
     click_pos = (-1,-1)
     nbrLabel = 3
     nbrClicks = 10
-    img = cv2.imread("segmentation/assets/test03.jpg")
+    img = cv2.imread("segmentation/assets/tetePetite.jpg")
     # img = cv2.resize(img, (80,80), interpolation = cv2.INTER_AREA)
     labels = get_label(img, nbrLabel, nbrClicks)
     try :
